@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading text-center">
+        <span class="pull-left"><img src="assets/icons/briefcase.png"></span> Recent Trnasactions</div>
+
+    <div class="panel-body trans-history-grid-row-padding">
+        <div class="row trans-history-grid-row-border " ng-repeat="item in transHistoryCtrl.transHistoryList" ng-style="{'border-left-color': item.categoryCode}" ng-class="{ 'trans-history-grid-row-border-top': $first} ">
+            <div class="col-md-2 ">{{ item.transactionDate | date: 'MMM dd'}}</div>
+            <div class="col-md-2 "><img height="28px " width="28px " src="{{item.merchantLogo}} "></div>
+            <div class="col-md-6 "><strong>{{item.merchant}}</strong><br><span class="small "> {{item.transactionType}}</span></div>
+            <div class="col-md-2 "><span class="pull-right "><strong> {{-item.amount | currency}}</strong></span></div>
+        </div>
+    </div>
+</div>
